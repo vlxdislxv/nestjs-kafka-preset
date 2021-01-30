@@ -1,0 +1,48 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/nestjs-kafka-preset/src",
+  "projects": {
+    "providers": {
+      "type": "library",
+      "root": "libs/providers",
+      "entryFile": "index",
+      "sourceRoot": "libs/providers/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/providers/tsconfig.lib.json"
+      }
+    },
+    "nestjs-kafka-preset": {
+      "type": "application",
+      "root": "apps/nestjs-kafka-preset",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs-kafka-preset/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestjs-kafka-preset/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "hero": {
+      "type": "application",
+      "root": "apps/hero",
+      "entryFile": "main",
+      "sourceRoot": "apps/hero/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/hero/tsconfig.app.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs-kafka-preset/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/nestjs-kafka-preset"
+}
