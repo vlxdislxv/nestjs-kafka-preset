@@ -1,6 +1,9 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/nestjs-kafka-preset/src",
+  "compilerOptions": {
+    "webpack": true
+  },
+  "monorepo": true,
   "projects": {
     "providers": {
       "type": "library",
@@ -9,15 +12,6 @@
       "sourceRoot": "libs/providers/src",
       "compilerOptions": {
         "tsConfigPath": "libs/providers/tsconfig.lib.json"
-      }
-    },
-    "nestjs-kafka-preset": {
-      "type": "application",
-      "root": "apps/nestjs-kafka-preset",
-      "entryFile": "main",
-      "sourceRoot": "apps/nestjs-kafka-preset/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/nestjs-kafka-preset/tsconfig.app.json"
       }
     },
     "gateway": {
@@ -38,11 +32,5 @@
         "tsConfigPath": "apps/hero/tsconfig.app.json"
       }
     }
-  },
-  "compilerOptions": {
-    "webpack": true,
-    "tsConfigPath": "apps/nestjs-kafka-preset/tsconfig.app.json"
-  },
-  "monorepo": true,
-  "root": "apps/nestjs-kafka-preset"
+  }
 }

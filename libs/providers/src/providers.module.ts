@@ -1,8 +1,14 @@
-import { Module } from '@nestjs/common';
+import { DynamicModule, FactoryProvider, Global, Module } from '@nestjs/common';
 import { ProvidersService } from './providers.service';
 
-@Module({
-  providers: [ProvidersService],
-  exports: [ProvidersService],
-})
-export class ProvidersModule {}
+@Global()
+@Module({})
+export class ProvidersModule {
+  public static register(providers: FactoryProvider[]): DynamicModule {
+    return {
+      module: ProvidersModule,
+      providers: [ProvidersService, ...providers],
+      exports: [...providers],
+    };
+  }
+}
